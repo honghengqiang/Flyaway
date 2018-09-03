@@ -1,13 +1,10 @@
 from flask import Flask
-
-
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
+from apps import bp as front_bp
 
 
 def create_app():
     app = Flask(__name__)
+    app.register_blueprint(front_bp)
     return app
 
 
